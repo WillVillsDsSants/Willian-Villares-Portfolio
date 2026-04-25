@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="fMyr2UF_u047jZafa2dma4rlPabER3sV7aW-qsG_QKI" />
+
+  <!-- ═══════════════════════════════════════════
+       FAVICON W.V — múltiplos formatos para compatibilidade máxima
+       Base64 SVG inline + PNG via serviço externo para Google/Brave/Edge
+  ═══════════════════════════════════════════ -->
+  <!-- PNG gerado via favicon.io a partir do SVG base64 para suporte universal -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/?size=32&id=undefined&format=png&color=F2EDE6" onerror="this.onerror=null;this.href='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFBMTcxNSIvPgogIDx0ZXh0IHg9IjUwIiB5PSI2MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjRjJFREU2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5XLlY8L3RleHQ+Cjwvc3ZnPg=='">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFBMTcxNSIvPgogIDx0ZXh0IHg9IjUwIiB5PSI2MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjRjJFREU2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5XLlY8L3RleHQ+Cjwvc3ZnPg==">
+  <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFBMTcxNSIvPgogIDx0ZXh0IHg9IjUwIiB5PSI2MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjRjJFREU2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5XLlY8L3RleHQ+Cjwvc3ZnPg==">
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFBMTcxNSIvPgogIDx0ZXh0IHg9IjUwIiB5PSI2MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNDAwIiBmaWxsPSIjRjJFREU2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5XLlY8L3RleHQ+Cjwvc3ZnPg==">
+  <!-- Manifest para PWA e ícone em Edge/Chrome/Brave -->
+  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiV2lsbGlhbiBWaWxsYXJlcyIsInNob3J0X25hbWUiOiJXLlYiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQXhNREFnTVRBd0lqNEtJQ0FnUEhKbFkzUXdkWEJzSUhkcFpIUm9QU0l4TURBaUlIaHRiRzV6UFNJeE1EQWlJR1pwYkd3OUlpTXhRVEUzTVRVaUx3b2dJQ0E4ZEdWNGRDQjRQU0kxTUNJZ2VUMGlOakVpSUdadmJuUXRjMmw2WlQwaU16Z2lJR1p2Ym5RdFpXeGxZWFE5SWtkaGNtY3NZWEJ3TGlBc2MzVnljbWtkSUdadmJuUXRkMlZpWlhJOUlqUXdJaUJtYVd4c1BTSWpTbUUzUVZZaUlIUmxlSFF0WVc1amFHOXlQU0p0YVdRa01pSWdaRzl0YVdOc1lXNGtNaUkrVnk1V1BDOTBaWGgwUGo0S1BDOXpkbWMrIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE1EQWdNVEF3SWo0S0lDQWdQSEpsWTNRd2RYQnNJSGRwWkhSb1BTSXhNREFpSUhodGJHNXpQU0l4TURBaUlHWnBiR3c5SWlNeFFURTNNVFVpTHdvZ0lDQTh0R1Y0ZENCKFBTSTVNY0lnZVQwaU5qRWlJR1p2Ym5RdGMybDZaVDBpTXpnaUlHWnZiblF0Wld4bFlYUTlJa2RoY21jc1lYQndMaUFzYzNWeWNta2tJR1p2Ym5RdGQyVmlkWEk5SWpRd0lpQm1hV3hzUFNJalNtRTNRVllpSUhSbGVIUXRZVzVqYUc5eVBTSnRhV1FrTWlJZ1pHOXRhV05zWVc0a01pSStWeTV3UEM5MFpYaDBQajRLUEM5emRtYysifV0sInN0YXJ0X3VybCI6Imh0dHBzOi8vd2lsbGlhbnZpbGxhcmVzLmNvbS8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMUExNzE1IiwidGhlbWVfY29sb3IiOiIjMUExNzE1IiwiZGVzY3JpcHRpb24iOiJQb3J0Zmxpbyotta...">
+  <script src="js/favicon.js" defer></script>
+
+  <!-- ═══════════════════════════════════════════
+       SEO PRIMÁRIO — On-Page
+       Título e descrição otimizados para recrutadores e buscadores
+  ═══════════════════════════════════════════ -->
+  <title>Willian Villares | Analysis &amp; Design</title>
+  <meta name="description" content="Willian Villares | Analysis &amp; Design — Analista de Dados e Designer. Dashboards logísticos, supply chain, automação de relatórios, identidade visual e UI. Aberto a novas oportunidades. Bauru, SP, Brasil.">
+  <meta name="keywords" content="Willian Villares, William Villares, willian villares analysis design, Analysis and Design, Willian Villares portfolio, analista de dados, data analyst, designer, UI designer, perfil profissional, currículo profissional, candidato, vaga, oportunidade de emprego, recrutamento, recrutador, portfólio, portfolio, contratação, freelancer, data analytics, análise de dados, análise logística, logística, supply chain, dashboard, KPIs, BigQuery, SQL, Looker Studio, Google Data Studio, Power BI, automação de relatórios, inteligência operacional, Business Intelligence, BI, identidade visual, branding, rebranding industrial, UI design, UX design, design system, data visualization, data design, product design, Figma, Bauru, São Paulo, SP, Brasil, willianvillares, willianvillares.com">
+  <meta name="author" content="Willian Villares">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  <meta name="slurp" content="index, follow">
+  <meta name="duckduckbot" content="index, follow">
+  <meta name="facebookexternalhit" content="index, follow">
+  <meta name="theme-color" content="#1A1715">
+  <meta name="msapplication-TileColor" content="#1A1715">
+  <meta name="msapplication-TileImage" content="https://willianvillares.com/og-image.svg">
+  <meta name="msapplication-config" content="none">
+  <meta name="language" content="pt-BR">
+  <meta name="content-language" content="pt-BR">
+  <meta name="revisit-after" content="7 days">
+  <meta name="rating" content="general">
+  <meta name="category" content="portfolio, data analytics, design">
+  <meta name="classification" content="Professional Portfolio">
+  <meta name="coverage" content="Brazil">
+  <meta name="distribution" content="global">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <!-- Privacidade, detecção e preferências visuais -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <meta name="color-scheme" content="dark light">
+  <meta name="pinterest-rich-pin" content="true">
+  <meta name="application-name" content="Willian Villares | Analysis & Design">
+  <meta name="apple-mobile-web-app-title" content="W.V">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Compatibilidade com Edge / IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="canonical" href="https://willianvillares.com/">
+  <!-- Hreflang para indicar idioma principal -->
+  <link rel="alternate" hreflang="pt-BR" href="https://willianvillares.com/">
+  <link rel="alternate" hreflang="x-default" href="https://willianvillares.com/">
+  <!-- IndieWeb · rel="me" — verificação de identidade entre perfis (Mastodon, GitHub, etc.) -->
+  <link rel="me" href="https://www.linkedin.com/in/willian-villares">
+  <link rel="me" href="https://wvillares-photography.vercel.app/">
+  <link rel="me" href="https://pelasruas.netlify.app/">
+  <link rel="me" href="mailto:will.vills.ds.sants@hotmail.com">
+  <link rel="author" href="https://willianvillares.com/#willian-villares">
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH — Facebook · LinkedIn · WhatsApp · Brave · Edge
+  ═══════════════════════════════════════════ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willianvillares.com/">
+  <meta property="og:title" content="Willian Villares | Analysis &amp; Design">
+  <meta property="og:description" content="Willian Villares | Analysis &amp; Design — Analista de Dados e Designer. Dashboards logísticos, automação de relatórios, supply chain, identidade visual e UI. Aberto a novas oportunidades. Bauru, SP, Brasil.">
+  <meta property="og:image" content="https://willianvillares.com/og-image.svg">
+  <meta property="og:image:secure_url" content="https://willianvillares.com/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:alt" content="Willian Villares | Analysis &amp; Design  · Bauru SP">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Willian Villares | Analysis &amp; Design">
+  <meta property="og:updated_time" content="2026-04-24T00:00:00+00:00">
+  <meta property="article:author" content="Willian Villares">
+  <meta property="profile:first_name" content="Willian">
+  <meta property="profile:last_name" content="Villares">
+  <meta property="profile:username" content="wvillares">
+  <!-- og:see_also — perfis e sites relacionados (Facebook, LinkedIn e crawlers) -->
+  <meta property="og:see_also" content="https://www.linkedin.com/in/willian-villares">
+  <meta property="og:see_also" content="https://wvillares-photography.vercel.app/">
+  <meta property="og:see_also" content="https://pelasruas.netlify.app/">
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER / X CARD
+  ═══════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://willianvillares.com/">
+  <meta name="twitter:title" content="Willian Villares | Analysis &amp; Design">
+  <meta name="twitter:description" content="Analista de Dados e Designer. Dashboards, automação, supply chain, identidade visual e UI. Aberto a novas oportunidades. Bauru, SP.">
+  <meta name="twitter:image" content="https://willianvillares.com/og-image.svg">
+  <meta name="twitter:image:alt" content="Willian Villares | Analysis &amp; Design">
+  <meta name="twitter:creator" content="@wvillares">
+  <meta name="twitter:site" content="@wvillares">
+
+  <!-- ═══════════════════════════════════════════
+       GEO — posicionamento geográfico (Local SEO)
+  ═══════════════════════════════════════════ -->
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Bauru, São Paulo, Brasil">
+  <meta name="geo.position" content="-22.3246;-49.0685">
+  <meta name="ICBM" content="-22.3246, -49.0685">
+
+  <!-- ═══════════════════════════════════════════
+       DUBLIN CORE — indexadores acadêmicos, bibliotecários e crawlers profundos
+  ═══════════════════════════════════════════ -->
+  <meta name="DC.title" content="Willian Villares | Analysis &amp; Design">
+  <meta name="DC.creator" content="Willian Villares">
+  <meta name="DC.subject" content="Análise de Dados; Design; UI; Identidade Visual; Supply Chain; Logística; Dashboards; Business Intelligence">
+  <meta name="DC.description" content="Portfólio profissional de Willian Villares. Analista de Dados e Designer baseado em Bauru, SP, Brasil.">
+  <meta name="DC.publisher" content="Willian Villares">
+  <meta name="DC.contributor" content="Willian Villares">
+  <meta name="DC.type" content="InteractiveResource">
+  <meta name="DC.format" content="text/html">
+  <meta name="DC.identifier" content="https://willianvillares.com/">
+  <meta name="DC.language" content="pt-BR">
+  <meta name="DC.coverage" content="Bauru, São Paulo, Brasil">
+  <meta name="DC.rights" content="© Willian Villares. Todos os direitos reservados.">
+  <meta name="DC.date" content="2026-04-24">
+
+  <!-- ═══════════════════════════════════════════
+       JSON-LD ESTRUTURADO — Google · Bing · DuckDuckGo Rich Results
+       Schema.org Person + WebSite + WebPage + BreadcrumbList + ProfilePage
+  ═══════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://willianvillares.com/#willian-villares",
+        "name": "Willian Villares",
+        "alternateName": ["William Villares", "W. Villares", "Villares Data", "Wvillares"],
+        "url": "https://willianvillares.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://willianvillares.com/og-image.svg",
+          "width": 1200,
+          "height": 630
+        },
+        "jobTitle": ["Analista de Dados", "Data Analyst", "Designer", "UI Designer", "Analista Logístico"],
+        "description": "Analista de Dados e Designer especializado em logística, supply chain e automação. Disponível para novas vagas e oportunidades. Criação de dashboards em tempo real, análise de dados operacional, identidade visual e UI design. Bauru, SP, Brasil.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bauru",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "email": "Will.Vills.Ds.Sants@hotmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/willian-villares",
+          "https://wvillares-photography.vercel.app/",
+          "https://pelasruas.netlify.app/",
+          "https://willianvillares.com/"
+        ],
+        "knowsAbout": [
+          "Análise de Dados", "Data Analytics", "Data Visualization",
+          "Logística", "Supply Chain", "Análise Logística",
+          "SQL", "BigQuery", "Looker Studio", "Google Data Studio",
+          "KPIs", "Dashboards", "Automação de Relatórios",
+          "Inteligência Operacional", "Business Intelligence",
+          "UI Design", "UX Design", "Identidade Visual", "Rebranding",
+          "Fotografia Urbana", "Fotografia de Rua"
+        ],
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Analista de Dados",
+            "occupationLocation": {
+              "@type": "City",
+              "name": "Bauru, São Paulo, Brasil"
+            },
+            "description": "Criação de dashboards, análise de dados logísticos e automação de relatórios operacionais via SQL e BigQuery.",
+            "skills": "SQL, BigQuery, Looker Studio, KPIs, Supply Chain, Data Visualization"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Designer",
+            "occupationLocation": {
+              "@type": "City",
+              "name": "Bauru, São Paulo, Brasil"
+            },
+            "description": "Design de identidade visual, UI/UX e rebranding operacional para ambientes industriais e corporativos.",
+            "skills": "UI Design, UX Design, Figma, Identidade Visual, Rebranding"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Fotógrafo Urbano",
+            "occupationLocation": {
+              "@type": "City",
+              "name": "Bauru, São Paulo, Brasil"
+            },
+            "description": "Fotografia urbana e de rua explorando arquitetura, movimento e a estética das cidades brasileiras."
+          }
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://willianvillares.com/#profilepage",
+        "url": "https://willianvillares.com/",
+        "name": "Perfil Profissional — Willian Villares | Analysis &amp; Design",
+        "mainEntity": { "@id": "https://willianvillares.com/#willian-villares" },
+        "inLanguage": "pt-BR",
+        "description": "Perfil e portfólio profissional de Willian Villares. Candidato disponível para vagas de Analista de Dados, Designer e áreas correlatas. Bauru, SP."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://willianvillares.com/#website",
+        "url": "https://willianvillares.com/",
+        "name": "Willian Villares | Analysis & Design",
+        "description": "Portfólio de Willian Villares — Analista de Dados e Designer. Perfil profissional disponível para recrutadores. Bauru, SP, Brasil.",
+        "publisher": {
+          "@id": "https://willianvillares.com/#willian-villares"
+        },
+        "inLanguage": "pt-BR",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://willianvillares.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://willianvillares.com/#webpage",
+        "url": "https://willianvillares.com/",
+        "name": "Willian Villares | Analysis &amp; Design",
+        "isPartOf": { "@id": "https://willianvillares.com/#website" },
+        "about": { "@id": "https://willianvillares.com/#willian-villares" },
+        "description": "Portfólio completo de Willian Villares. Projetos de análise de dados, dashboards logísticos, identidade visual e UI design. Perfil disponível para novas vagas e oportunidades.",
+        "inLanguage": "pt-BR",
+        "datePublished": "2025-01-01",
+        "dateModified": "2026-04-24",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Início — Willian Villares",
+              "item": "https://willianvillares.com/"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://willianvillares.com/#services",
+        "name": "Willian Villares | Analysis & Design",
+        "description": "Serviços de análise de dados, design de interface e identidade visual para empresas, indústrias e profissionais. Atendimento remoto em todo o Brasil, sede em Bauru, SP.",
+        "url": "https://willianvillares.com/",
+        "image": "https://willianvillares.com/og-image.svg",
+        "telephone": "+55-14-000000000",
+        "priceRange": "$$",
+        "areaServed": [
+          { "@type": "Country", "name": "Brasil" },
+          { "@type": "AdministrativeArea", "name": "São Paulo" },
+          { "@type": "City", "name": "Bauru" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bauru",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "provider": { "@id": "https://willianvillares.com/#willian-villares" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços — Analysis & Design",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Análise de Dados e Dashboards",
+                "description": "Criação de dashboards logísticos e operacionais, análise de KPIs, automação de relatórios e modelagem de dados via SQL, BigQuery e Looker Studio.",
+                "serviceType": "Data Analytics",
+                "provider": { "@id": "https://willianvillares.com/#willian-villares" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Análise Logística e Supply Chain",
+                "description": "Análise de processos logísticos, fluxos operacionais, inteligência operacional e otimização de cadeia de suprimentos.",
+                "serviceType": "Logistics Analytics",
+                "provider": { "@id": "https://willianvillares.com/#willian-villares" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Identidade Visual e Rebranding",
+                "description": "Construção de identidade visual, rebranding industrial e sistemas de design para empresas, indústrias e profissionais liberais.",
+                "serviceType": "Visual Identity",
+                "provider": { "@id": "https://willianvillares.com/#willian-villares" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "UI Design e Interface",
+                "description": "Design de interfaces digitais, wireframes, protótipos interativos e documentação de sistemas de design em Figma.",
+                "serviceType": "UI Design",
+                "provider": { "@id": "https://willianvillares.com/#willian-villares" }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://willianvillares.com/#portfolio-work",
+        "name": "Portfólio Willian Villares",
+        "author": { "@id": "https://willianvillares.com/#willian-villares" },
+        "inLanguage": "pt-BR",
+        "license": "https://willianvillares.com/",
+        "copyrightHolder": { "@id": "https://willianvillares.com/#willian-villares" },
+        "copyrightYear": "2026",
+        "keywords": "análise de dados, design, UI, identidade visual, dashboards, supply chain, logística, Business Intelligence, rebranding, Bauru, SP, Brasil"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       SEO TÉCNICO — Sitemap · DNS Prefetch · Performance
+  ═══════════════════════════════════════════ -->
+  <link rel="sitemap" type="application/xml" href="https://willianvillares.com/sitemap.xml">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//www.linkedin.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"></noscript>
+
+  <style>:root{--paper:#F2EDE6;--cream:#F5F2EB;--ink:#1A1715;--red:#DC2222;--stone:#B8AFA6;--mid:#D4CDC3;--zinc-100:#F4F4F5;--zinc-200:#E4E4E7;--zinc-400:#A1A1AA;--zinc-500:#8E8E96;--zinc-600:#6B6B74;--zinc-700:#5A5A62;--zinc-800:#27272A;--white:#FFFFFF;--f-display:'Bebas Neue',sans-serif;--f-serif:'EB Garamond',Georgia,serif;--f-accent:'Playfair Display',serif;--f-sans:'DM Sans',system-ui,sans-serif;--ease:cubic-bezier(0.4,0,0.2,1);--gutter:2rem;--max-w:88rem}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--f-sans);background:var(--ink);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background 1s ease .4s}body.site-ready{background:var(--paper)}#loader{position:fixed;inset:0;z-index:9999;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;transition:clip-path 1s cubic-bezier(0.76,0,0.24,1),visibility 1s ease;overflow:hidden;clip-path:inset(0 0 0 0)}#loader.hidden{clip-path:inset(0 0 100% 0);visibility:hidden;pointer-events:none}.loader-corner{position:absolute;width:18px;height:18px;opacity:0;animation:loaderFadeIn .6s ease forwards}.loader-corner--tl{top:2rem;left:2rem;border-top:1px solid var(--stone);border-left:1px solid var(--stone);animation-delay:.1s}.loader-corner--tr{top:2rem;right:2rem;border-top:1px solid var(--stone);border-right:1px solid var(--stone);animation-delay:.15s}.loader-corner--bl{bottom:2rem;left:2rem;border-bottom:1px solid var(--stone);border-left:1px solid var(--stone);animation-delay:.2s}.loader-corner--br{bottom:2rem;right:2rem;border-bottom:1px solid var(--stone);border-right:1px solid var(--stone);animation-delay:.25s}.loader-eyebrow{font-size:.5rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);margin-bottom:1.6rem;opacity:0;transform:translateY(8px);animation:loaderFadeUp .7s cubic-bezier(0.4,0,0.2,1) .3s forwards}.loader-name{font-family:var(--f-serif);font-size:clamp(2.6rem,7vw,5.5rem);font-weight:500;color:var(--ink);letter-spacing:-.02em;line-height:1;opacity:0;transform:translateY(24px);animation:loaderFadeUp 1s cubic-bezier(0.4,0,0.2,1) .5s forwards}.loader-name em{color:var(--red);font-style:italic}.loader-rule{display:flex;align-items:center;gap:.8rem;margin:1.4rem 0 1.2rem;opacity:0;animation:loaderFadeIn .6s ease 1.1s forwards}.loader-rule-line{height:1px;background:var(--mid);animation:loaderExpandSide .9s cubic-bezier(0.4,0,0.2,1) 1.1s forwards;width:0}.loader-rule-dot{width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0;transform:scale(0);animation:loaderDot .5s cubic-bezier(0.34,1.56,0.64,1) 1.4s forwards}.loader-tag{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--zinc-500);opacity:0;transform:translateY(8px);animation:loaderFadeUp .7s cubic-bezier(0.4,0,0.2,1) 1.3s forwards}.loader-progress-wrap{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--mid)}.loader-progress-bar{height:100%;width:0;background:var(--red);animation:loaderProgress 2s cubic-bezier(0.4,0,0.8,1) .2s forwards}.loader-locale{position:absolute;bottom:2.2rem;font-size:.48rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);opacity:0;animation:loaderFadeIn .7s ease 1.5s forwards}.loader-year{position:absolute;right:2.2rem;bottom:2.2rem;font-family:var(--f-serif);font-size:.7rem;font-style:italic;color:var(--stone);opacity:0;animation:loaderFadeIn .7s ease 1.6s forwards}@keyframes loaderFadeUp{to{opacity:1;transform:translateY(0)}}@keyframes loaderFadeIn{to{opacity:1}}@keyframes loaderExpandSide{to{width:3.5rem}}@keyframes loaderDot{to{transform:scale(1)}}@keyframes loaderProgress{0%{width:0}60%{width:75%}100%{width:100%}}::selection{background:var(--red);color:var(--white)}.container{max-width:var(--max-w);margin-left:auto;margin-right:auto;padding-left:var(--gutter);padding-right:var(--gutter)}#navbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 0;transition:background .5s var(--ease),padding .4s var(--ease),box-shadow .4s}#navbar.scrolled{background:rgba(245,242,235,.93);backdrop-filter:blur(16px);padding:1rem 0;box-shadow:0 1px 0 var(--mid)}.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between}.nav-logo{font-family:var(--f-serif);font-size:1.25rem;font-weight:500;color:var(--ink);text-decoration:none;letter-spacing:.01em;z-index:110;position:relative}.nav-links{display:flex;gap:2.5rem;list-style:none}.nav-links a{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--zinc-600);text-decoration:none;transition:color .3s;position:relative}.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{transform:scaleX(1)}.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:110;position:relative}.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .4s,opacity .3s}.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}#mobile-menu{display:none;position:fixed;inset:0;background:var(--ink);z-index:200;flex-direction:column;justify-content:space-between;opacity:0;pointer-events:none;transition:opacity .5s var(--ease);padding:2rem}#mobile-menu.open{opacity:1;pointer-events:all}.mob-header{display:flex;justify-content:space-between;align-items:center}.mob-logo{font-family:var(--f-serif);font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none}.mob-logo em{color:var(--red);font-style:italic}.mob-close{width:2.6rem;height:2.6rem;border:1.5px solid rgba(255,255,255,.25);border-radius:50%;background:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s,background .3s}.mob-close:hover{border-color:var(--red);background:var(--red)}.mob-close svg{width:14px;height:14px;stroke:var(--paper);stroke-width:1.5}.mob-nav{display:flex;flex-direction:column;gap:0;padding:2rem 0;flex:1;justify-content:center}.mob-nav-item{display:flex;align-items:center;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;color:var(--paper);transition:color .3s}.mob-nav-item:first-child{border-top:1px solid rgba(255,255,255,.06)}.mob-nav-item:hover{color:var(--red)}.mob-nav-num{font-family:var(--f-serif);font-size:.75rem;font-style:italic;color:rgba(255,255,255,.2);min-width:1.4rem;transition:color .3s}.mob-nav-item:hover .mob-nav-num{color:var(--red)}.mob-nav-label{font-family:var(--f-serif);font-size:1.7rem;font-weight:300;letter-spacing:-.01em;line-height:1}.mob-nav-arrow{margin-left:auto;font-size:.8rem;color:rgba(255,255,255,.15);transition:color .3s,transform .3s}.mob-nav-item:hover .mob-nav-arrow{color:var(--red);transform:translateX(4px)}.mob-footer{display:flex;justify-content:space-between;align-items:flex-end}.mob-footer-loc{font-size:.55rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2)}.mob-footer-tag{font-size:.55rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2)}@media (max-width:768px){.nav-links{display:none}.hamburger{display:flex}#mobile-menu{display:flex}}@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}.reveal-d1{transition-delay:.15s}.reveal-d2{transition-delay:.3s}.reveal-d3{transition-delay:.45s}#home{min-height:100vh;background:var(--cream);display:flex;flex-direction:column}.hero-body{flex:1;display:flex;align-items:center;padding-top:7rem}.hero-content{max-width:var(--max-w);width:100%;margin:0 auto;padding:0 var(--gutter)}.hero-badge{font-family:var(--f-sans);font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--zinc-400);margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s var(--ease) forwards .15s}.hero-name{font-family:var(--f-serif);font-size:clamp(3rem,6.5vw,6.5rem);font-weight:400;line-height:1.0;letter-spacing:-.01em;color:var(--ink);margin-bottom:1.5rem;opacity:0;animation:fadeUp .9s var(--ease) forwards .3s}.hero-sub{font-family:var(--f-sans);font-size:1rem;font-weight:400;color:var(--zinc-700);line-height:1.75;max-width:34rem;margin-bottom:3rem;opacity:0;animation:fadeUp .9s var(--ease) forwards .45s}.hero-cta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;opacity:0;animation:fadeIn 1s var(--ease) forwards .65s}.hero-stats{border-top:1px solid var(--mid);opacity:0;animation:fadeIn 1s var(--ease) forwards .9s}.hero-stats-inner{max-width:var(--max-w);margin:0 auto;padding:2rem var(--gutter);display:flex;gap:3.5rem;flex-wrap:wrap}.stat-num{font-family:var(--f-serif);font-size:2.2rem;font-weight:300;letter-spacing:-.01em;color:var(--ink);line-height:1}.stat-num span{color:var(--red)}.stat-label{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--zinc-600);margin-top:.35rem}.btn-outline{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);padding:.85rem 1.8rem;transition:background .35s,color .35s;display:inline-block}.btn-outline:hover{background:var(--ink);color:var(--paper)}.btn-text{font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--zinc-500);text-decoration:none;border-bottom:1px solid var(--zinc-400);padding-bottom:2px;transition:color .3s,border-color .3s}.btn-text:hover{color:var(--ink);border-color:var(--ink)}.section-divider{background:var(--ink);display:flex;flex-direction:column;position:relative;overflow:hidden}.divider-top-rule{height:1px;background:linear-gradient(90deg,transparent,var(--red) 30%,var(--red) 70%,transparent);opacity:.55}.divider-inner{display:flex;align-items:stretch;min-height:4.2rem}.divider-accent{width:4px;background:var(--red);flex-shrink:0}.divider-tags{display:flex;align-items:stretch;flex:1;overflow:hidden}.divider-tag-item{display:flex;align-items:center;justify-content:center;flex:1;padding:1.1rem 1rem;border-right:1px solid rgba(255,255,255,.07);position:relative;transition:background .35s}.divider-tag-item:last-child{border-right:none}.divider-tag-item:hover{background:rgba(220,34,34,.1)}.divider-tag-item:hover .divider-tag-label{color:#fff}.divider-tag-label{font-family:var(--f-sans);font-size:.57rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap;transition:color .3s}.divider-bottom-rule{height:1px;background:rgba(255,255,255,.05)}@media (max-width:640px){.divider-tag-item{padding:1rem .5rem}.divider-tag-item:nth-child(n+5){display:none}}.section-eyebrow{font-size:.62rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}.section-eyebrow::before{content:'';width:2rem;height:1px;background:var(--red);display:block;flex-shrink:0}.section-title{font-family:var(--f-serif);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:2rem}.section-title em{font-style:italic;color:var(--red)}.divider-red{width:3rem;height:2px;background:var(--red);margin:2rem 0}#about{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}.about-layout{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr}@media (min-width:1024px){.about-layout{grid-template-columns:4fr 7fr;padding:0}}.about-identity{position:relative;background:transparent;display:flex;flex-direction:column;justify-content:space-between;padding:4rem var(--gutter);min-height:340px;border-bottom:1px solid rgba(255,255,255,.07)}@media (min-width:1024px){.about-identity{min-height:100%;padding:5rem 4rem;border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}}.about-identity-top{display:flex;align-items:center;justify-content:space-between}.about-identity-label{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.8rem}.about-identity-label::before{content:'';width:1.5rem;height:1px;background:var(--red);display:block}.about-identity-num{font-family:var(--f-serif);font-size:.85rem;font-style:italic;color:rgba(255,255,255,.12)}.about-identity-body{margin-top:auto;padding-top:3rem}.about-identity-name{font-family:var(--f-serif);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;line-height:1.05;color:var(--paper);margin-bottom:1.6rem;letter-spacing:-.02em}.about-identity-name em{font-style:italic;color:var(--red)}.about-identity-rule{width:2.5rem;height:1px;background:rgba(255,255,255,.15);margin-bottom:1.4rem}.about-identity-location{font-size:.68rem;font-weight:400;color:rgba(255,255,255,.75);letter-spacing:.12em;display:flex;align-items:center;gap:.7rem}.about-identity-location span{color:var(--red);font-size:.6rem}.about-content-col{padding:4.5rem var(--gutter);display:flex;flex-direction:column;justify-content:center}@media (min-width:1024px){.about-content-col{padding:5rem 4rem 5rem 5rem}}.about-text{font-size:1rem;font-weight:400;color:rgba(255,255,255,.82);line-height:1.85;margin-bottom:1.6rem}.about-text--lead{font-family:var(--f-serif);font-size:clamp(1rem,1.4vw,1.2rem);font-weight:400;color:rgba(255,255,255,.72);line-height:1.75;margin-bottom:1.6rem}.about-divider{width:2.5rem;height:1px;background:rgba(255,255,255,.1);margin:2rem 0}.skills-heading{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:1.2rem}.skills-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}.skills-list li{display:flex;align-items:center;gap:1.2rem;font-size:.95rem;color:rgba(255,255,255,.78);font-weight:400;padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.05)}.skills-list li:last-child{border-bottom:none}.skills-list li::before{content:'';display:block;width:1rem;height:1px;background:var(--red);flex-shrink:0}.about-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,.07);margin-top:2.5rem}.about-metric{padding:1.4rem 1.2rem;border-right:1px solid rgba(255,255,255,.07)}.about-metric:last-child{border-right:none}.about-metric-num{font-family:var(--f-serif);font-size:2.2rem;font-weight:300;color:var(--paper);line-height:1;margin-bottom:.3rem}.about-metric-num span{color:var(--red)}.about-metric-label{font-size:.52rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--zinc-400)}.btn-outline-light{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.85rem 1.8rem;transition:background .35s,color .35s,border-color .35s;display:inline-block}.btn-outline-light:hover{background:var(--red);border-color:var(--red);color:var(--white)}#expertise{padding:9rem 0;background:var(--cream);color:var(--ink);position:relative;overflow:hidden}#expertise::after{content:'WV';font-family:var(--f-serif);font-size:30vw;font-weight:300;font-style:italic;color:rgba(26,23,21,.04);position:absolute;right:-2vw;bottom:-5vw;line-height:1;pointer-events:none;letter-spacing:-.02em}.expertise-grid{display:grid;grid-template-columns:1fr;gap:4rem;position:relative;z-index:2}@media (min-width:1024px){.expertise-grid{grid-template-columns:3fr 8fr;gap:5rem}}.expertise-sticky{position:static}@media (min-width:1024px){.expertise-sticky{position:sticky;top:8rem}}.section-title-light{font-family:var(--f-serif);font-size:clamp(2.8rem,5vw,5rem);font-weight:300;letter-spacing:-.02em;color:var(--ink);line-height:1.05}.section-title-light em{font-style:italic;color:var(--red)}.eyebrow-light{font-size:.62rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}.eyebrow-light::before{content:'';width:2rem;height:1px;background:var(--red);display:block;flex-shrink:0}.services-list{display:flex;flex-direction:column}.service-item{display:flex;flex-direction:column;gap:2rem;border-top:1px solid var(--mid);padding:2.8rem 0;transition:border-color .5s}.service-item:hover{border-color:var(--red)}@media (min-width:768px){.service-item{flex-direction:row;gap:4rem}}.service-number{font-family:var(--f-serif);font-size:3.8rem;font-weight:300;font-style:italic;color:var(--mid);flex-shrink:0;line-height:1;transition:color .5s}.service-item:hover .service-number{color:var(--red)}.service-title{font-family:var(--f-serif);font-size:1.7rem;font-weight:400;color:var(--ink);margin-bottom:.4rem}.service-sub{font-size:.82rem;font-weight:400;color:var(--zinc-600);margin-bottom:1.1rem}.service-desc{color:var(--zinc-700);font-weight:400;line-height:1.8;max-width:34rem;margin-bottom:1.6rem}.service-tag{display:inline-block;border:1px solid var(--mid);color:var(--zinc-700);font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.4rem .9rem;border-radius:9999px;margin-right:.4rem;margin-bottom:.4rem;transition:border-color .3s,color .3s}.service-item:hover .service-tag{border-color:var(--red);color:var(--ink)}#work{padding:0;background:var(--cream)}.work-intro{padding:8rem var(--gutter) 5rem;max-width:var(--max-w);margin:0 auto;display:flex;flex-direction:column;gap:1rem;justify-content:space-between;align-items:flex-start}@media (min-width:768px){.work-intro{flex-direction:row;align-items:flex-end;padding-top:9rem}}.projects-hero-grid{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:3px}@media (max-width:768px){.projects-hero-grid{grid-template-columns:1fr;padding:0}}.project-hero-card{position:relative;overflow:hidden;display:block;text-decoration:none;height:70vh;min-height:460px}.project-hero-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--ease),filter .8s;filter:brightness(.5)}.project-hero-card:hover .project-hero-card-bg{transform:scale(1.05);filter:brightness(.38)}.project-hero-card-overlay{position:absolute;inset:0;background:linear-gradient( to top,rgba(26,23,21,.92) 0%,rgba(26,23,21,.3) 50%,transparent 100% )}.project-hero-card-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem}.project-hero-card-num{font-family:var(--f-serif);font-size:.75rem;font-style:italic;color:rgba(255,255,255,.4);margin-bottom:.6rem}.project-hero-card-cat{font-size:.52rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1rem}.project-hero-card-cat::before{content:'';width:1.2rem;height:1px;background:var(--red);display:block}.project-hero-card-title{font-family:var(--f-serif);font-size:clamp(1.6rem,2.8vw,2.6rem);font-weight:400;color:var(--white);line-height:1.1;margin-bottom:1rem;letter-spacing:-.01em;transition:color .4s}.project-hero-card:hover .project-hero-card-title{color:rgba(255,255,255,.85)}.project-hero-card-desc{font-size:.88rem;font-weight:400;color:rgba(255,255,255,.78);line-height:1.7;max-width:22rem;margin-bottom:1.8rem}.project-hero-card:hover .project-hero-card-desc{color:rgba(255,255,255,.7)}.project-hero-card-cta{display:inline-flex;align-items:center;gap:.7rem;font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:3px;transition:color .3s,border-color .3s}.project-hero-card:hover .project-hero-card-cta{color:var(--red);border-color:var(--red)}.project-hero-card-cta svg{transition:transform .4s var(--ease)}.project-hero-card:hover .project-hero-card-cta svg{transform:translate(3px,-3px)}.project-hero-card-watermark{position:absolute;top:2rem;right:2.5rem;font-family:var(--f-serif);font-size:8rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.04);line-height:1;pointer-events:none;transition:color .6s}.project-hero-card:hover .project-hero-card-watermark{color:rgba(220,34,34,.08)}.project-hero-card-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.6rem}.project-hero-card-tag{font-size:.52rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.12);padding:.28rem .75rem;transition:border-color .3s,color .3s}.project-hero-card:hover .project-hero-card-tag{color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.22)}.project-hero-card-rule{width:2rem;height:1px;background:rgba(255,255,255,.15);margin-bottom:1.4rem;transition:width .5s var(--ease),background .4s}.project-hero-card:hover .project-hero-card-rule{width:4rem;background:var(--red)}.projects-list{max-width:var(--max-w);margin:0 auto;padding:0 var(--gutter)}.projects-list-header{display:flex;justify-content:space-between;align-items:center;padding:3rem 0 0;border-top:1px solid var(--mid);margin-bottom:0}.projects-list-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}.projects-list-count{font-family:var(--f-serif);font-size:.9rem;font-style:italic;color:var(--stone)}.project-row{display:grid;grid-template-columns:3rem 1fr 10rem auto;align-items:center;gap:2.5rem;padding:1.6rem 0;border-bottom:1px solid var(--mid);text-decoration:none;color:var(--ink);position:relative;overflow:hidden;transition:border-color .4s,background .4s}.project-row:hover{border-color:var(--red)}.project-row-thumb{width:10rem;height:5.5rem;overflow:hidden;flex-shrink:0;position:relative}.project-row-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(60%) brightness(.85);transition:transform .7s var(--ease),filter .5s}.project-row:hover .project-row-thumb img{transform:scale(1.08);filter:grayscale(0%) brightness(1)}.project-row-thumb::after{content:'';position:absolute;inset:0;background:var(--red);opacity:0;transition:opacity .4s}.project-row:hover .project-row-thumb::after{opacity:.1}.project-row-num{font-family:var(--f-serif);font-size:1.1rem;font-style:italic;color:var(--mid);transition:color .4s;flex-shrink:0}.project-row:hover .project-row-num{color:var(--red)}.project-row-body{min-width:0}.project-row-cat{font-size:.52rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--zinc-500);margin-bottom:.35rem;transition:color .3s}.project-row:hover .project-row-cat{color:var(--red)}.project-row-title{font-family:var(--f-serif);font-size:clamp(1.15rem,2vw,1.7rem);font-weight:400;color:var(--ink);line-height:1.15;transition:color .4s}.project-row:hover .project-row-title{color:var(--zinc-700)}.project-row-result{font-size:.72rem;font-weight:400;color:var(--zinc-600);margin-top:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:1;transform:translateY(0);transition:opacity .4s var(--ease),transform .4s var(--ease)}.project-row-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;flex-shrink:0}.project-row-arrow{width:2.4rem;height:2.4rem;border:1px solid var(--mid);display:flex;align-items:center;justify-content:center;transition:background .35s,border-color .35s,transform .4s var(--ease)}.project-row:hover .project-row-arrow{background:var(--ink);border-color:var(--ink);transform:rotate(-45deg)}.project-row:hover .project-row-arrow svg{stroke:var(--white)}.project-row-arrow svg{width:13px;height:13px;stroke:var(--ink);stroke-width:1.5;transition:stroke .3s}.project-row-year{font-size:.55rem;font-weight:400;color:var(--stone);letter-spacing:.1em}@media (max-width:900px){.project-row{grid-template-columns:2rem 1fr auto;gap:1.2rem}.project-row-thumb{display:none}.project-row-result{display:none}}#photography{padding:6rem 0 5rem;background:var(--ink);color:var(--paper)}.photo-section-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}.photo-section-label::before{content:'';width:1.5rem;height:1px;background:var(--red);display:block;flex-shrink:0}.photo-header{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:3rem}@media (min-width:1024px){.photo-header{flex-direction:row;align-items:flex-end}}.photo-tabs{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.4rem;flex-wrap:wrap}.photo-tab{font-family:var(--f-serif);font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:300;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.55);padding:0;transition:color .4s;line-height:1.2}.photo-tab.active{color:rgba(255,255,255,.92)}.photo-tab:hover:not(.active){color:rgba(255,255,255,.4)}.photo-sep{font-family:var(--f-serif);font-size:1.4rem;color:var(--red);opacity:.5}.photo-desc{display:flex;flex-direction:column;gap:.6rem;max-width:34rem}.photo-desc p{font-size:.92rem;font-weight:400;color:var(--zinc-300);line-height:1.75}.photo-desc p:first-child{font-family:var(--f-accent);font-style:italic;font-size:1rem;color:var(--zinc-300)}.photo-link{font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;display:inline-flex;align-items:center;gap:.65rem;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:4px;transition:color .3s,border-color .3s}.photo-link:hover{color:var(--red);border-color:var(--red)}.photos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}@media (max-width:768px){.photos-grid{grid-template-columns:repeat(2,1fr);gap:2px}}.photo-item{position:relative;overflow:hidden;aspect-ratio:3/4}.photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s;filter:grayscale(40%)}.photo-item:hover img{transform:scale(1.06);filter:grayscale(0%)}.photo-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,23,21,.85));padding:2rem 1rem 1.2rem;transform:translateY(100%);transition:transform .5s var(--ease)}.photo-item:hover .photo-caption{transform:translateY(0)}.photo-loc{font-size:.55rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.3rem}.photo-name{font-family:var(--f-serif);font-size:.95rem;color:var(--paper);font-weight:400}.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(26,23,21,.75);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .45s var(--ease);display:flex;align-items:center;justify-content:center;padding:1.5rem}.modal-overlay.open{opacity:1;pointer-events:all}.modal-box{background:var(--cream);max-width:72rem;width:100%;max-height:92vh;overflow-y:auto;transform:translateY(32px) scale(.97);transition:transform .5s var(--ease);position:relative}.modal-overlay.open .modal-box{transform:translateY(0) scale(1)}.modal-close{position:absolute;top:1.4rem;right:1.4rem;background:var(--red);border:2px solid var(--red);cursor:pointer;color:var(--white);z-index:10;width:2.8rem;height:2.8rem;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s}.modal-close:hover{background:var(--ink);border-color:var(--paper)}.modal-close svg{width:16px;height:16px;stroke-width:2}.modal-images{display:grid;grid-template-columns:3fr 2fr;grid-template-rows:auto auto;gap:4px;background:var(--ink)}.modal-img-main{grid-row:1 / 3;aspect-ratio:4/3;overflow:hidden}.modal-img-side{aspect-ratio:16/9;overflow:hidden}.modal-images img{width:100%;height:100%;object-fit:cover;display:block}.modal-body{display:grid;grid-template-columns:1fr 1fr;gap:2rem 4rem;padding:2.2rem 3rem}@media (max-width:768px){.service-number{font-size:2.4rem}.modal-images{grid-template-columns:1fr;grid-template-rows:auto}.modal-img-main{grid-row:auto;aspect-ratio:16/9}.modal-body{grid-template-columns:1fr;padding:2.5rem 1.8rem;gap:2rem}}.modal-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}.modal-title{font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:0}.modal-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}.modal-tag{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--mid);color:var(--zinc-700);padding:.35rem .85rem;border-radius:9999px}.modal-desc{font-size:.9rem;font-weight:400;color:var(--zinc-700);line-height:1.7;margin-bottom:1rem}.modal-divider{width:100%;height:1px;background:var(--mid);margin:1rem 0}.modal-meta{display:flex;flex-direction:column;gap:.7rem}.modal-meta-row{display:flex;gap:1rem}.modal-meta-label{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);min-width:6rem;flex-shrink:0}.modal-meta-val{font-size:.9rem;font-weight:400;color:var(--zinc-700)}#contact{padding:9rem 0;background:var(--paper);position:relative;overflow:hidden}#contact::before{content:'Contato';font-family:var(--f-serif);font-size:22vw;font-weight:300;font-style:italic;color:rgba(26,23,21,.03);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;white-space:nowrap}.contact-inner{max-width:60rem;margin:0 auto;padding:0 var(--gutter);text-align:center;position:relative;z-index:2}.contact-title{font-family:var(--f-serif);font-size:clamp(3rem,7vw,6.5rem);font-weight:300;letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:1.5rem 0}.contact-title .outline{font-style:italic;color:transparent;-webkit-text-stroke:1px var(--ink)}.contact-sub{font-family:var(--f-serif);font-size:1.15rem;font-weight:400;color:var(--zinc-700);line-height:1.8;max-width:34rem;margin:0 auto 3.5rem}.contact-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;width:100%}.contact-link{display:flex;align-items:center;gap:1rem;color:var(--ink);text-decoration:none;font-size:.66rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;border:1.5px solid var(--ink);padding:.9rem 1.8rem;transition:background .35s,color .35s}.contact-link:hover{background:var(--ink);color:var(--paper)}.contact-link:hover svg{stroke:var(--red)}.contact-link svg{width:16px;height:16px;stroke-width:1.5;stroke:currentColor;fill:none;transition:stroke .3s}.contact-links-wrapper{display:inline-flex;flex-direction:column;align-items:stretch}.contact-link-meeting{width:100%;justify-content:center;padding:.9rem 1.8rem;font-size:.66rem;letter-spacing:.15em;border-color:var(--ink);gap:.7rem}.contact-link-meeting svg{width:18px;height:18px}.contact-link-meeting:hover{background:var(--red);border-color:var(--red);color:var(--paper)}.contact-link-meeting:hover svg{stroke:var(--paper)}footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06)}.footer-body{max-width:var(--max-w);margin:0 auto;padding:3.5rem var(--gutter) 2.5rem;display:flex;flex-direction:column;gap:2.5rem}@media (min-width:768px){.footer-body{flex-direction:row;justify-content:space-between;align-items:flex-start}}.footer-wordmark{font-family:var(--f-serif);font-size:1.4rem;font-weight:300;color:rgba(255,255,255,.6);text-decoration:none;letter-spacing:-.01em;display:block;margin-bottom:.5rem;transition:color .3s}.footer-wordmark em{color:var(--red);font-style:italic}.footer-wordmark:hover{color:var(--paper)}.footer-tagline{font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:1.4rem}.footer-socials{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.footer-social-link{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}.footer-social-link:hover{color:var(--paper)}.footer-social-sep{color:var(--red);font-size:.5rem}.footer-nav-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;align-items:flex-start}@media (min-width:768px){.footer-nav-list{align-items:flex-end}}.footer-nav-list a{font-size:.68rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s}.footer-nav-list a:hover{color:rgba(255,255,255,.9)}.footer-rule{max-width:var(--max-w);margin:0 auto;height:1px;background:rgba(255,255,255,.06);padding:0 var(--gutter)}.footer-base{max-width:var(--max-w);margin:0 auto;padding:1.2rem var(--gutter);display:flex;justify-content:space-between;align-items:center}.footer-copy{font-size:.58rem;color:var(--zinc-500);letter-spacing:.06em}#scroll-top{position:fixed;bottom:2rem;right:2rem;z-index:90;background:var(--ink);color:var(--paper);border:none;cursor:none;width:42px;height:42px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(1rem);transition:opacity .4s,transform .4s,background .3s}#scroll-top.visible{opacity:1;transform:translateY(0)}#scroll-top:hover{background:var(--red)}#scroll-top svg{width:16px;height:16px;stroke-width:1.5}#all-projects-modal{position:fixed;inset:0;z-index:500;background:rgba(26,23,21,.85);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}#all-projects-modal.open{opacity:1;pointer-events:all}.apm-box{background:var(--paper);width:min(92vw,72rem);max-height:88vh;overflow-y:auto;padding:3rem 3.5rem;position:relative}@media(max-width:640px){.apm-box{padding:2rem 1.4rem}}.apm-close{position:absolute;top:1.4rem;right:1.4rem;width:2.4rem;height:2.4rem;background:none;border:1.5px solid var(--mid);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s}.apm-close:hover{background:var(--ink);border-color:var(--ink)}.apm-close:hover svg{stroke:var(--paper)}.apm-close svg{width:14px;height:14px;stroke:var(--ink);stroke-width:1.5}.apm-header{margin-bottom:2.5rem}.apm-eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}.apm-title{font-family:var(--f-serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--ink);line-height:1.15}.apm-list{display:flex;flex-direction:column;gap:0}.apm-item{border-top:1px solid var(--mid);padding:2rem 0;display:grid;grid-template-columns:3rem 1fr auto;gap:1.5rem;align-items:start;cursor:pointer;transition:border-color .3s}.apm-item:last-child{border-bottom:1px solid var(--mid)}.apm-item:hover{border-color:var(--red)}.apm-item:hover .apm-num{color:var(--red)}.apm-item:hover .apm-arrow{background:var(--ink)}.apm-item:hover .apm-arrow svg{stroke:var(--paper)}.apm-num{font-family:var(--f-serif);font-size:1.1rem;color:var(--stone);padding-top:.15rem;transition:color .3s}.apm-body{min-width:0}.apm-cat{font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--zinc-500);margin-bottom:.4rem}.apm-name{font-family:var(--f-serif);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:.6rem}.apm-desc{font-size:.75rem;color:var(--zinc-600);line-height:1.65;max-width:48rem;margin-bottom:.8rem}.apm-tags{display:flex;flex-wrap:wrap;gap:.4rem}.apm-tag{font-size:.55rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid var(--mid);color:var(--zinc-600)}.apm-right{display:flex;flex-direction:column;align-items:flex-end;gap:.6rem;padding-top:.2rem}.apm-year{font-size:.6rem;color:var(--zinc-500);letter-spacing:.08em;white-space:nowrap}.apm-arrow{width:2rem;height:2rem;border:1px solid var(--mid);display:flex;align-items:center;justify-content:center;transition:background .3s}.apm-arrow svg{width:13px;height:13px;stroke:var(--ink);stroke-width:1.5;transition:stroke .3s}.modal-live-btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.2rem;padding:.75rem 1.4rem;background:var(--ink);color:var(--paper);text-decoration:none;font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;transition:background .3s,color .3s}.modal-live-btn:hover{background:var(--red)}.modal-live-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:1.5;fill:none;flex-shrink:0}</style>
+</head>
+<body>
+
+<div id="loader">
+  <!-- Corner marks -->
+  <span class="loader-corner loader-corner--tl"></span>
+  <span class="loader-corner loader-corner--tr"></span>
+  <span class="loader-corner loader-corner--bl"></span>
+  <span class="loader-corner loader-corner--br"></span>
+
+  <!-- Center content -->
+  <p class="loader-eyebrow">Portfólio &amp; Photography</p>
+  <p class="loader-name">Willian <em>Villares</em></p>
+  <div class="loader-rule">
+    <span class="loader-rule-line"></span>
+    <span class="loader-rule-dot"></span>
+    <span class="loader-rule-line"></span>
+  </div>
+  <p class="loader-tag">Design · Data · Bauru, SP</p>
+
+  <!-- Bottom details -->
+  <p class="loader-locale">willianvillares.com</p>
+  <span class="loader-year">2026</span>
+
+  <!-- Progress bar -->
+  <div class="loader-progress-wrap">
+    <div class="loader-progress-bar"></div>
+  </div>
+</div>
+
+
+<!-- NAVBAR -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">W.V</a>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#expertise">Especialidades</a></li>
+      <li><a href="#work">Projetos</a></li>
+      <li><a href="#photography">Fotografia</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+
+  <div class="mob-header">
+    <a href="#home" class="mob-logo">W.<em>V</em></a>
+    <button class="mob-close" id="mob-close-btn" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <nav class="mob-nav">
+    <a href="#about" class="mobile-link mob-nav-item">
+      <span class="mob-nav-num">01</span>
+      <span class="mob-nav-label">Sobre</span>
+      <span class="mob-nav-arrow">→</span>
+    </a>
+    <a href="#expertise" class="mobile-link mob-nav-item">
+      <span class="mob-nav-num">02</span>
+      <span class="mob-nav-label">Especialidades</span>
+      <span class="mob-nav-arrow">→</span>
+    </a>
+    <a href="#work" class="mobile-link mob-nav-item">
+      <span class="mob-nav-num">03</span>
+      <span class="mob-nav-label">Projetos</span>
+      <span class="mob-nav-arrow">→</span>
+    </a>
+    <a href="#photography" class="mobile-link mob-nav-item">
+      <span class="mob-nav-num">04</span>
+      <span class="mob-nav-label">Fotografia</span>
+      <span class="mob-nav-arrow">→</span>
+    </a>
+    <a href="#contact" class="mobile-link mob-nav-item">
+      <span class="mob-nav-num">05</span>
+      <span class="mob-nav-label">Contato</span>
+      <span class="mob-nav-arrow">→</span>
+    </a>
+  </nav>
+
+  <div class="mob-footer">
+    <span class="mob-footer-loc">Bauru · SP, Brasil</span>
+    <span class="mob-footer-tag">Design &amp; Data</span>
+  </div>
+
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-body">
+    <div class="hero-content">
+      <p class="hero-badge">Design &amp; Analysis</p>
+      <h1 class="hero-name">Willian Villares</h1>
+      <p class="hero-sub">Criando experiências digitais sofisticadas através de design elegante e análise de dados estratégica.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-outline">Ver Projetos</a>
+        <a href="#contact" class="btn-text">Vamos trabalhar juntos →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-label">Anos de experiência</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">30<span>+</span></div>
+        <div class="stat-label">Projetos entregues</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Áreas de atuação</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Fotos nas ruas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="section-divider">
+  <div class="divider-top-rule"></div>
+  <div class="divider-inner">
+    <div class="divider-accent"></div>
+    <div class="divider-tags">
+      <div class="divider-tag-item"><span class="divider-tag-label">Data Analysis</span></div>
+      <div class="divider-tag-item"><span class="divider-tag-label">Visual Design</span></div>
+      <div class="divider-tag-item"><span class="divider-tag-label">Logística</span></div>
+      <div class="divider-tag-item"><span class="divider-tag-label">Brand Identity</span></div>
+      <div class="divider-tag-item"><span class="divider-tag-label">Dashboards</span></div>
+      <div class="divider-tag-item"><span class="divider-tag-label">Supply Chain</span></div>
+    </div>
+  </div>
+  <div class="divider-bottom-rule"></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-layout">
+
+    <!-- coluna esquerda — identidade -->
+    <div class="about-identity reveal visible">
+      <div class="about-identity-top">
+        <p class="about-identity-label">Sobre mim</p>
+        <span class="about-identity-num">§ 01</span>
+      </div>
+      <div class="about-identity-body">
+        <h2 class="about-identity-name">Entre dados<br>e <em>design.</em></h2>
+        <div class="about-identity-rule"></div>
+        <p class="about-identity-location"><span>↗</span> Bauru / São Paulo, BR</p>
+      </div>
+    </div>
+
+    <!-- coluna direita — conteúdo -->
+    <div class="about-content-col">
+
+      <div class="reveal visible">
+        <p class="about-text about-text--lead">Sou um profissional que transita com naturalidade entre dois mundos aparentemente opostos: a precisão dos dados e a fluidez do design. Acredito que a melhor análise não serve de nada se não for comunicada com clareza e beleza.</p>
+        <p class="about-text">Como Analista de Logística e Dados, transformo planilhas caóticas em dashboards que facilitam decisões. Como Designer, crio sistemas visuais que respiram coerência e elegância.</p>
+      </div>
+
+      <div class="about-divider reveal reveal-d1 visible"></div>
+
+      <div class="reveal reveal-d1 visible">
+        <p class="skills-heading">Ferramentas &amp; Habilidades</p>
+        <ul class="skills-list">
+          <li>Power BI, Tableau &amp; Looker Studio · Dashboards interativos, relatórios executivos e visualização de dados estratégica</li>
+          <li>SQL, BigQuery &amp; Python · Consultas avançadas, ETL, automação de pipelines e análise exploratória de dados</li>
+          <li>Figma &amp; Framer · Design de interfaces, prototipagem de alta fidelidade e design systems documentados</li>
+          <li>Supply chain &amp; KPIs logísticos · Monitoramento de estoques, controle de entregas e otimização de custos operacionais</li>
+        </ul>
+      </div>
+
+      <div class="about-metrics reveal reveal-d2 visible">
+        <div class="about-metric">
+          <div class="about-metric-num">5<span>+</span></div>
+          <div class="about-metric-label">Anos de experiência</div>
+        </div>
+        <div class="about-metric">
+          <div class="about-metric-num">30<span>+</span></div>
+          <div class="about-metric-label">Projetos entregues</div>
+        </div>
+        <div class="about-metric">
+          <div class="about-metric-num">2</div>
+          <div class="about-metric-label">Áreas de atuação</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 visible" style="margin-top:2.5rem;">
+        <a href="#contact" class="btn-outline-light">Entre em contato</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="container">
+    <div class="expertise-grid">
+
+      <div class="expertise-sticky">
+        <div class="reveal visible">
+          <p class="eyebrow-light">O que faço</p>
+          <h2 class="section-title-light">Minha<br><em>atuação.</em></h2>
+        </div>
+      </div>
+
+      <div class="services-list">
+        <div class="service-item reveal visible">
+          <div class="service-number">01</div>
+          <div>
+            <h3 class="service-title">Análise de Dados</h3>
+            <p class="service-sub">Data Analytics &amp; Business Intelligence</p>
+            <p class="service-desc">Transformo dados brutos em insights acionáveis. Construo pipelines, dashboards interativos e relatórios que suportam decisões estratégicas com precisão e clareza visual.</p>
+            <span class="service-tag">Power BI</span>
+            <span class="service-tag">Tableau</span>
+            <span class="service-tag">Looker Studio</span>
+            <span class="service-tag">Python</span>
+            <span class="service-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="service-item reveal reveal-d1 visible">
+          <div class="service-number">02</div>
+          <div>
+            <h3 class="service-title">Logística &amp; Supply Chain</h3>
+            <p class="service-sub">Operações &amp; Eficiência</p>
+            <p class="service-desc">Analiso e otimizo fluxos logísticos, controle de estoque, KPIs de performance e custos operacionais, unindo análise quantitativa com pensamento sistêmico.</p>
+            <span class="service-tag">Supply Chain</span>
+            <span class="service-tag">KPIs Logísticos</span>
+            <span class="service-tag">BigQuery</span>
+            <span class="service-tag">Python</span>
+          </div>
+        </div>
+
+        <div class="service-item reveal reveal-d2 visible">
+          <div class="service-number">03</div>
+          <div>
+            <h3 class="service-title">Design Visual</h3>
+            <p class="service-sub">Brand Identity &amp; Systems</p>
+            <p class="service-desc">Desenvolvo identidades visuais, sistemas de design e materiais de comunicação que equilibram estética e função, do conceito à entrega.</p>
+            <span class="service-tag">Figma</span>
+            <span class="service-tag">Framer</span>
+            <span class="service-tag">Adobe Suite</span>
+            <span class="service-tag">Typography</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+
+  <!-- cabeçalho -->
+  <div class="work-intro">
+    <div class="reveal visible">
+      <p class="section-eyebrow">Projetos Selecionados</p>
+      <h2 class="section-title">Trabalhos<br>em <em>destaque.</em></h2>
+    </div>
+    <div class="reveal reveal-d1 visible">
+      <button id="btn-ver-todos" class="btn-text" style="background:none;border:none;padding:0;cursor:pointer;">Ver todos os projetos →</button>
+    </div>
+  </div>
+
+  <!-- grid de 2 projetos em destaque -->
+  <div class="projects-hero-grid">
+
+    <a href="#" class="project-hero-card reveal visible" data-project="logistico">
+      <div class="project-hero-card-bg" style="background-image:url('assets/projects/logistico-bg.jpg')"></div>
+      <div class="project-hero-card-overlay"></div>
+      <span class="project-hero-card-watermark">01</span>
+      <div class="project-hero-card-content">
+        <span class="project-hero-card-num">01 · 2025 – 2026</span>
+        <p class="project-hero-card-cat">Data Analytics · Supply Chain</p>
+        <h3 class="project-hero-card-title">Control Tower · Dashboards Logísticos</h3>
+        <div class="project-hero-card-rule"></div>
+        <p class="project-hero-card-desc">Monitoramento em tempo real de toda a operação logística: perdas, avarias, backlogs, inversões, atrasos de veículos, produção hora a hora e muito mais, com atualização automática via SQL e BigQuery.</p>
+        <div class="project-hero-card-tags">
+          <span class="project-hero-card-tag">SQL</span>
+          <span class="project-hero-card-tag">BigQuery</span>
+          <span class="project-hero-card-tag">Looker Studio</span>
+          <span class="project-hero-card-tag">KPIs</span>
+        </div>
+        <span class="project-hero-card-cta">
+          Ver projeto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="12" height="12" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"></path></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href="#" class="project-hero-card reveal reveal-d1 visible" data-project="layout-maker">
+      <div class="project-hero-card-bg" style="background-image:url('assets/projects/layout-maker-1.jpg')"></div>
+      <div class="project-hero-card-overlay"></div>
+      <span class="project-hero-card-watermark">02</span>
+      <div class="project-hero-card-content">
+        <span class="project-hero-card-num">02 · 2026</span>
+        <p class="project-hero-card-cat">Sistemas · Web App</p>
+        <h3 class="project-hero-card-title">Villares | Layout Maker</h3>
+        <div class="project-hero-card-rule"></div>
+        <p class="project-hero-card-desc">Aplicação web desenvolvida para criação de layouts físicos: suporte a 3 idiomas, múltiplos ambientes, edição visual intuitiva, exportação em JSON e PNG e modo apresentação integrado.</p>
+        <div class="project-hero-card-tags">
+          <span class="project-hero-card-tag">Web App</span>
+          <span class="project-hero-card-tag">JSON</span>
+          <span class="project-hero-card-tag">Multi-idioma</span>
+        </div>
+        <span class="project-hero-card-cta">
+          Ver projeto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="12" height="12" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"></path></svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- lista editorial — projetos complementares -->
+  <div class="projects-list">
+    <div class="projects-list-header">
+      <span class="projects-list-label">Mais trabalhos</span>
+      <span class="projects-list-count">02 projetos</span>
+    </div>
+
+    <a href="#" class="project-row reveal visible" data-project="identidade">
+      <span class="project-row-num">03</span>
+      <div class="project-row-body">
+        <p class="project-row-cat">Automação · Dados</p>
+        <h3 class="project-row-title">Fechamento de Turno Automatizado</h3>
+        <p class="project-row-result">Fechamento de turno gerado automaticamente e enviado por e-mail para toda a equipe ao fim de cada turno, sem nenhuma intervenção manual</p>
+      </div>
+      <div class="project-row-thumb">
+        <img src="assets/projects/identidade-bg.jpg" alt="Fechamento de Turno" loading="lazy" width="160" height="128">
+      </div>
+      <div class="project-row-meta">
+        <div class="project-row-arrow">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M7 7h10v10"></path></svg>
+        </div>
+        <span class="project-row-year">2025 – 2026</span>
+      </div>
+    </a>
+
+    <a href="#" class="project-row reveal visible" data-project="relatorio">
+      <span class="project-row-num">04</span>
+      <div class="project-row-body">
+        <p class="project-row-cat">UI · UX · Identidade Visual</p>
+        <h3 class="project-row-title">Identidade Visual e Rebranding Operacional</h3>
+        <p class="project-row-result">Do conceito ao rebranding completo: uma linguagem visual construída para que qualquer operador leia os dados com clareza, em qualquer turno</p>
+      </div>
+      <div class="project-row-thumb">
+        <img src="assets/projects/relatorio-thumb.jpg" alt="Identidade Visual" loading="lazy" width="160" height="128">
+      </div>
+      <div class="project-row-meta">
+        <div class="project-row-arrow">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M7 7h10v10"></path></svg>
+        </div>
+        <span class="project-row-year">2025 – 2026</span>
+      </div>
+    </a>
+
+
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY -->
+<section id="photography">
+  <div class="container">
+    <p class="photo-section-label">Fotografia</p>
+    <div class="photo-header">
+      <div class="reveal visible" style="max-width:38rem">
+        <div class="photo-tabs">
+          <button class="photo-tab active" data-portfolio="willian">W.V | Photography</button>
+          <span class="photo-sep">/</span>
+          <button class="photo-tab" data-portfolio="pelasruas">Pelas Ruas</button>
+        </div>
+        <div class="photo-desc" id="photo-desc" style="opacity: 1; transition: opacity 0.4s;"><p>Encontro nas ruas a minha maior inspiração. Cada clique é uma tentativa de registrar a beleza da metrópole.</p><p>Exploro a cidade através de geometria, luz artificial e momentos efêmeros que compõem o ritmo autêntico das ruas.</p></div>
+      </div>
+      <div class="reveal visible">
+        <a href="https://wvillares-photography.vercel.app/" target="_blank" rel="noopener noreferrer" id="photo-ext-link" class="photo-link">Ver Portfólio Completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="13" height="13" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+        <p id="photo-dev-credit" style="display:none;margin-top:.8rem;font-size:.6rem;letter-spacing:.12em;color:var(--zinc-600);">Desenvolvido por <a href="https://thayshds.netlify.app/" target="_blank" rel="noopener" style="color:var(--stone);text-decoration:none;border-bottom:1px solid var(--stone);">Thays Henriques</a></p>
+      </div>
+    </div>
+    <div class="photos-grid" id="photos-grid" style="opacity: 1; transition: opacity 0.4s;"><div class="photo-item"><img src="assets/photos/photo-1486406146926-c627a92ad1ab.avif" alt="Arquitetura &amp; Geometria" loading="lazy"><div class="photo-caption"><span class="photo-loc">São Paulo, SP</span><h4 class="photo-name">Arquitetura &amp; Geometria</h4></div></div><div class="photo-item"><img src="assets/photos/photo-1517646287270-a5a9ca602e5c.avif" alt="Cotidiano &amp; Movimento" loading="lazy"><div class="photo-caption"><span class="photo-loc">Bauru, SP</span><h4 class="photo-name">Cotidiano &amp; Movimento</h4></div></div><div class="photo-item"><img src="assets/photos/photo-1519501025264-65ba15a82390.avif" alt="Noturno &amp; Luz Artificial" loading="lazy"><div class="photo-caption"><span class="photo-loc">São Paulo, SP</span><h4 class="photo-name">Noturno &amp; Luz Artificial</h4></div></div><div class="photo-item"><img src="assets/photos/photo-1449824913935-59a10b8d2000.avif" alt="Perspectivas" loading="lazy"><div class="photo-caption"><span class="photo-loc">São Paulo, SP</span><h4 class="photo-name">Perspectivas</h4></div></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal visible">
+      <p class="section-eyebrow" style="justify-content:center;">Vamos trabalhar juntos</p>
+    </div>
+    <div class="reveal reveal-d1 visible">
+      <h2 class="contact-title">
+        Aberto para<br>
+        <span class="outline">novas ideias</span><span style="color:var(--red)">.</span>
+      </h2>
+    </div>
+    <div class="reveal reveal-d2 visible">
+      <p class="contact-sub">Interessado em criar algo excepcional: 
+seja uma análise que transforma dados em decisões, ou um design que 
+comunica com elegância.</p>
+    </div>
+    <div class="contact-links-wrapper">
+    <div class="contact-links reveal reveal-d3 visible">
+      <a id="contact-email-link" href="#" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        E-mail
+      </a>
+      <a href="https://www.linkedin.com/in/willian-villares" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        LinkedIn
+      </a>
+    </div>
+    <div class="reveal reveal-d4 visible" style="margin-top:.75rem; width:100%;">
+      <a href="https://calendly.com/will-vills-ds-sants/30min" target="_blank" rel="noopener noreferrer" class="contact-link contact-link-meeting">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><circle cx="12" cy="16" r="2"></circle></svg>
+        Agende uma reunião
+      </a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+    </button>
+    <div class="modal-images" id="modal-images"></div>
+    <div class="modal-body">
+      <div class="modal-left">
+        <p class="modal-eyebrow" id="modal-eyebrow">Data Visualization</p>
+        <h2 class="modal-title" id="modal-title">Relatório Executivo Interativo</h2>
+        <div class="modal-divider"></div>
+        <div class="modal-meta" id="modal-meta"><div class="modal-meta-row"><span class="modal-meta-label">Ferramentas</span><span class="modal-meta-val">Power BI, Python, Excel</span></div><div class="modal-meta-row"><span class="modal-meta-label">Entrega</span><span class="modal-meta-val">3 semanas</span></div><div class="modal-meta-row"><span class="modal-meta-label">Resultado</span><span class="modal-meta-val">Redução de 60% no tempo de análise</span></div></div>
+        <div class="modal-tags" id="modal-tags" style="margin-top:1.2rem;"><span class="modal-tag">Power BI</span><span class="modal-tag">Python</span><span class="modal-tag">Storytelling</span><span class="modal-tag">Data Viz</span></div>
+      </div>
+      <div class="modal-right">
+        <p class="modal-desc" id="modal-desc1">Transformação de 
+relatórios estáticos em narrativas de dados interativas. O projeto 
+unificou fontes distintas e eliminou o retrabalho manual que consumia 
+horas da equipe toda semana.</p>
+        <p class="modal-desc" id="modal-desc2">Mais do que um dashboard,
+ criamos uma linguagem visual de dados: cores, hierarquia e núrrative 
+flow que guia o gestor do problema à decisão sem ambiguidade.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-body">
+    <div class="footer-left">
+      <a href="#home" class="footer-wordmark">Willian <em>Villares</em></a>
+      <p class="footer-tagline">Design · Data · Bauru, SP</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/willian-villares" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+        <span class="footer-social-sep">·</span>
+        <a href="https://wvillares-photography.vercel.app/" target="_blank" rel="noopener" class="footer-social-link">W.V | Photography</a>
+        <span class="footer-social-sep">·</span>
+        <a href="https://pelasruas.netlify.app/" target="_blank" rel="noopener" class="footer-social-link">Pelas Ruas</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-nav-list">
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#expertise">Especialidades</a></li>
+        <li><a href="#work">Projetos</a></li>
+        <li><a href="#photography">Fotografia</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer-base">
+    <p class="footer-copy" id="footer-copy">© 2025 · 2026 Willian Villares</p>
+    <p class="footer-copy">Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+
+<!-- ALL PROJECTS MODAL -->
+<div id="all-projects-modal" role="dialog" aria-modal="true" aria-label="Todos os projetos">
+  <div class="apm-box">
+    <button class="apm-close" id="apm-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="apm-header">
+      <p class="apm-eyebrow">Portfólio Completo</p>
+      <h2 class="apm-title">Todos os<br><em style="font-style:italic;color:var(--red);">projetos</em></h2>
+    </div>
+    <div class="apm-list" id="apm-list"></div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+
+</body></html>

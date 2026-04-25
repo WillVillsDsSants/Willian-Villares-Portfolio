@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Willian Villares | Analysis &amp; Design">
+  <rect width="1200" height="400" fill="#1A1715"/>
+
+  <!-- Corner marks -->
+  <g stroke="#F2EDE6" stroke-width="1.5" fill="none" opacity="0.35">
+    <path d="M 40 40 L 40 72 M 40 40 L 72 40"/>
+    <path d="M 1160 40 L 1128 40 M 1160 40 L 1160 72"/>
+    <path d="M 40 360 L 40 328 M 40 360 L 72 360"/>
+    <path d="M 1160 360 L 1128 360 M 1160 360 L 1160 328"/>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="600" y="115" font-family="Georgia, serif" font-size="15" font-weight="500" fill="#8E8E96" text-anchor="middle" letter-spacing="8">PORTFOLIO  ·  BAURU — SP  ·  BRASIL</text>
+
+  <!-- Main title -->
+  <text x="600" y="215" font-family="Georgia, serif" font-size="92" font-weight="400" fill="#F2EDE6" text-anchor="middle">Willian Villares</text>
+
+  <!-- Subtitle with accent -->
+  <text x="600" y="275" font-family="Georgia, serif" font-size="34" font-weight="300" fill="#B8AFA6" text-anchor="middle">Analysis  <tspan fill="#DC2222" font-style="italic">&amp;</tspan>  Design</text>
+
+  <!-- Tagline -->
+  <text x="600" y="335" font-family="Georgia, serif" font-size="15" font-weight="300" fill="#8E8E96" text-anchor="middle" letter-spacing="6" font-style="italic">análise de dados  ·  identidade visual  ·  dashboards operacionais</text>
+</svg>
